@@ -34,7 +34,12 @@ body {
   color: #255d76;
 }
 
-.navbar nav a {
+.nav-menu {
+  display: flex;
+  align-items: center;
+}
+
+.nav-menu a {
   margin: 0 1rem;
   text-decoration: none;
   color: #000;
@@ -48,6 +53,36 @@ body {
   border-radius: 6px;
   text-decoration: none;
   font-weight: 600;
+}
+
+/* Hamburger menu */
+.hamburger {
+  display: none;
+  flex-direction: column;
+  cursor: pointer;
+  padding: 5px;
+}
+
+.hamburger span {
+  width: 25px;
+  height: 3px;
+  background-color: #255d76;
+  margin: 3px 0;
+  transition: 0.3s;
+  transform-origin: center;
+}
+
+/* Hamburger animation */
+.hamburger.active span:nth-child(1) {
+  transform: rotate(45deg) translate(9px, 9px);
+}
+
+.hamburger.active span:nth-child(2) {
+  opacity: 0;
+}
+
+.hamburger.active span:nth-child(3) {
+  transform: rotate(-45deg) translate(9px, -9px);
 }
 
 
@@ -1498,4 +1533,222 @@ body {
 
 .project-card {
   animation: fadeInUp 0.6s ease-out;
+}
+
+/* ============ RESPONSIVE DESIGN ============ */
+
+/* Tablet and Mobile styles */
+@media screen and (max-width: 768px) {
+  /* Hamburger menu for mobile */
+  .hamburger {
+    display: flex;
+  }
+
+  .nav-menu {
+    position: fixed;
+    top: 60px;
+    right: -100%;
+    width: 100%;
+    height: calc(100vh - 60px);
+    background: white;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: center;
+    padding-top: 2rem;
+    transition: right 0.3s ease;
+    box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+  }
+
+  .nav-menu.active {
+    right: 0;
+  }
+
+  .nav-menu a {
+    margin: 1rem 0;
+    font-size: 1.1rem;
+    width: 100%;
+    text-align: center;
+    padding: 1rem;
+  }
+
+  /* Hero section mobile */
+  .hero {
+    padding: 1rem;
+    min-height: calc(100vh - 60px);
+  }
+
+  .center-text {
+    flex-direction: column;
+    gap: 1rem;
+  }
+
+  .text-left, .text-right {
+    font-size: 2rem !important;
+  }
+
+  .photo-container {
+    order: -1;
+  }
+
+  .profile-img {
+    width: 200px;
+    height: 200px;
+  }
+
+  .circle-bg {
+    width: 220px;
+    height: 220px;
+  }
+
+  /* About section mobile */
+  .about {
+    padding: 2rem 1rem;
+  }
+
+  .about-content {
+    flex-direction: column;
+    text-align: center;
+  }
+
+  .about-text {
+    max-width: 100%;
+    margin-bottom: 2rem;
+  }
+
+  .about-image {
+    align-self: center;
+  }
+
+  /* Skills section mobile */
+  .skills-content {
+    grid-template-columns: 1fr;
+    gap: 2rem;
+    padding: 1rem;
+  }
+
+  .skills-category h3 {
+    font-size: 1.3rem;
+  }
+
+  /* Experience & Education mobile */
+  .exp-edu-container {
+    flex-direction: column;
+    padding: 2rem 1rem;
+  }
+
+  .exp-section, .edu-section {
+    width: 100%;
+    margin-bottom: 2rem;
+  }
+
+  .timeline-item {
+    padding-left: 2rem;
+  }
+
+  .timeline-item::before {
+    left: -0.5rem;
+  }
+
+  .timeline-item::after {
+    left: -0.75rem;
+  }
+
+  /* Portfolio section mobile */
+  .portfolio {
+    padding: 2rem 1rem;
+  }
+
+  .carousel-container {
+    margin: 2rem 0;
+  }
+
+  .project-card {
+    min-width: 280px;
+    margin: 0 0.5rem;
+  }
+
+  .project-title {
+    font-size: 1.3rem;
+  }
+
+  .project-description {
+    font-size: 0.9rem;
+  }
+
+  .carousel-nav {
+    width: 35px;
+    height: 35px;
+  }
+
+  .carousel-nav.prev {
+    left: -15px;
+  }
+
+  .carousel-nav.next {
+    right: -15px;
+  }
+
+  /* Navigation buttons mobile */
+  .nav-button {
+    padding: 0.6rem 1.2rem;
+    font-size: 0.9rem;
+  }
+}
+
+/* Extra small mobile devices */
+@media screen and (max-width: 480px) {
+  .logo {
+    font-size: 1rem;
+  }
+
+  .navbar {
+    padding: 1rem 1rem;
+  }
+
+  .hero {
+    padding: 0.5rem;
+  }
+
+  .text-left, .text-right {
+    font-size: 1.5rem !important;
+  }
+
+  .profile-img {
+    width: 150px;
+    height: 150px;
+  }
+
+  .circle-bg {
+    width: 170px;
+    height: 170px;
+  }
+
+  .intro-link span {
+    font-size: 1rem;
+  }
+
+  .about {
+    padding: 1.5rem 0.5rem;
+  }
+
+  .section-title {
+    font-size: 2rem;
+  }
+
+  .skills {
+    padding: 2rem 0.5rem;
+  }
+
+  .project-card {
+    min-width: 250px;
+  }
+
+  .project-title {
+    font-size: 1.1rem;
+  }
+
+  .key-features span {
+    font-size: 0.75rem;
+    padding: 6px 10px;
+  }
 }

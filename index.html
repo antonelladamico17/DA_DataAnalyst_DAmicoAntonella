@@ -18,14 +18,23 @@
 <body>
   <header class="navbar">
     <div class="logo">DA | D'Amico Antonella</div>
-    <nav>
+    
+    <!-- Hamburger menu button (mobile) -->
+    <div class="hamburger" id="hamburger">
+      <span></span>
+      <span></span>
+      <span></span>
+    </div>
+
+    <!-- Navigation menu -->
+    <nav class="nav-menu" id="nav-menu">
       <a href="#about">about</a>
       <a href="#skills">skills</a>
       <a href="#portfolio">portfolio</a>
+      <a href="https://www.linkedin.com/in/antonelladamico" target="_blank" class="btn-contact">
+        <i class="fab fa-linkedin"></i>
+      </a>
     </nav>
-    <a href="https://www.linkedin.com/in/antonelladamico" target="_blank" class="btn-contact">
-      <i class="fab fa-linkedin"></i>
-    </a>
   </header>
 
   <main class="hero">
@@ -1171,6 +1180,31 @@
   // Carousel filter functions removed - no longer needed
 
   // Filter functions removed for cleaner carousel design
+
+  // Hamburger menu functionality
+  const hamburger = document.getElementById('hamburger');
+  const navMenu = document.getElementById('nav-menu');
+
+  hamburger.addEventListener('click', function() {
+    hamburger.classList.toggle('active');
+    navMenu.classList.toggle('active');
+  });
+
+  // Close menu when clicking on links (mobile)
+  document.querySelectorAll('.nav-menu a').forEach(link => {
+    link.addEventListener('click', () => {
+      hamburger.classList.remove('active');
+      navMenu.classList.remove('active');
+    });
+  });
+
+  // Close menu when clicking outside (mobile)
+  document.addEventListener('click', function(event) {
+    if (!hamburger.contains(event.target) && !navMenu.contains(event.target)) {
+      hamburger.classList.remove('active');
+      navMenu.classList.remove('active');
+    }
+  });
 </script>
 
 
