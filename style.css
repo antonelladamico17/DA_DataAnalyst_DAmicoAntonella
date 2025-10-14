@@ -802,33 +802,33 @@ body {
 }
 
 /* Extra small mobile devices */
-@media (max-width: 480px) {
+@media (max-width: 360px) {
   .skills-3d-grid {
     grid-template-columns: 1fr;
     gap: 12px;
   }
   
   .skill-3d-card {
-    height: 220px;
+    height: 200px;
   }
   
   .card-front, .card-back {
-    padding: 10px;
+    padding: 8px;
   }
   
   .category-icon {
-    width: 45px;
-    height: 45px;
-    font-size: 20px;
-    margin-bottom: 10px;
+    width: 40px;
+    height: 40px;
+    font-size: 18px;
+    margin-bottom: 8px;
   }
   
   .card-front h3 {
-    font-size: 0.95rem;
+    font-size: 0.9rem;
   }
   
   .card-description {
-    font-size: 0.75rem;
+    font-size: 0.7rem;
   }
 }
 
