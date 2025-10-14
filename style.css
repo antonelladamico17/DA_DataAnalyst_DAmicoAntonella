@@ -47,7 +47,7 @@ body {
 }
 
 .btn-contact {
-  background-color: #255d76;
+  background-color: white;
   color: white;
   padding: 0.5rem 1rem;
   border-radius: 6px;
@@ -581,15 +581,15 @@ body {
 /* 3D Skills Cards */
 .skills-3d-grid {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
-  gap: 30px;
-  max-width: 1400px;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 20px;
+  max-width: 1200px;
   margin: 0 auto 60px;
   perspective: 1000px;
 }
 
 .skill-3d-card {
-  height: 400px;
+  height: 320px;
   perspective: 1000px;
   cursor: pointer;
 }
@@ -613,7 +613,7 @@ body {
   height: 100%;
   backface-visibility: hidden;
   border-radius: 20px;
-  padding: 30px;
+  padding: 20px;
   box-shadow: 0 15px 35px rgba(37, 93, 118, 0.15);
   display: flex;
   flex-direction: column;
@@ -633,14 +633,14 @@ body {
 
 /* Category Icons */
 .category-icon {
-  width: 100px;
-  height: 100px;
-  margin: 0 auto 30px;
+  width: 80px;
+  height: 80px;
+  margin: 0 auto 20px;
   border-radius: 50%;
   display: flex;
   align-items: center;
   justify-content: center;
-  font-size: 45px;
+  font-size: 35px;
   color: white;
   position: relative;
   overflow: hidden;
@@ -679,8 +679,8 @@ body {
 
 /* Card Content */
 .card-front h3, .card-back h4 {
-  font-size: 1.4rem;
-  margin-bottom: 20px;
+  font-size: 1.2rem;
+  margin-bottom: 15px;
   font-weight: 600;
 }
 
@@ -691,7 +691,7 @@ body {
 .card-description {
   color: #64748b;
   line-height: 1.6;
-  font-size: 1rem;
+  font-size: 0.9rem;
   text-align: center;
   margin-top: auto;
 }
@@ -700,17 +700,17 @@ body {
 .tech-tags {
   display: flex;
   flex-wrap: wrap;
-  gap: 10px;
-  margin: 20px 0;
+  gap: 8px;
+  margin: 15px 0;
   justify-content: center;
 }
 
 .tech-tag {
   background: linear-gradient(135deg, #f0f9fb);
   color: #1a4156;
-  padding: 8px 15px;
-  border-radius: 20px;
-  font-size: 0.85rem;
+  padding: 6px 12px;
+  border-radius: 16px;
+  font-size: 0.75rem;
   font-weight: 600;
   box-shadow: 0 3px 10px rgba(255, 194, 62, 0.3);
   transition: all 0.3s ease;
@@ -763,31 +763,72 @@ body {
 /* Responsive Design */
 @media (max-width: 768px) {
   .skills-3d-grid {
-    grid-template-columns: 1fr;
-    gap: 20px;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 15px;
   }
   
   .skill-3d-card {
-    height: 350px;
+    height: 240px;
   }
   
   .card-front, .card-back {
-    padding: 20px;
+    padding: 12px;
   }
   
   .category-icon {
-    width: 80px;
-    height: 80px;
-    font-size: 35px;
-    margin-bottom: 20px;
+    width: 50px;
+    height: 50px;
+    font-size: 24px;
+    margin-bottom: 12px;
   }
   
   .card-front h3 {
-    font-size: 1.2rem;
+    font-size: 1rem;
   }
   
   .card-description {
-    font-size: 0.9rem;
+    font-size: 0.8rem;
+  }
+  
+  .tech-tags {
+    gap: 6px;
+    margin: 10px 0;
+  }
+  
+  .tech-tag {
+    padding: 4px 8px;
+    font-size: 0.7rem;
+  }
+}
+
+/* Extra small mobile devices */
+@media (max-width: 480px) {
+  .skills-3d-grid {
+    grid-template-columns: 1fr;
+    gap: 12px;
+  }
+  
+  .skill-3d-card {
+    height: 220px;
+  }
+  
+  .card-front, .card-back {
+    padding: 10px;
+  }
+  
+  .category-icon {
+    width: 45px;
+    height: 45px;
+    font-size: 20px;
+    margin-bottom: 10px;
+  }
+  
+  .card-front h3 {
+    font-size: 0.95rem;
+  }
+  
+  .card-description {
+    font-size: 0.75rem;
   }
 }
 
