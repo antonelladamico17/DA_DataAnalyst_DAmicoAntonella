@@ -856,6 +856,11 @@ body {
   margin: 0 auto;
 }
 
+/* Mobile Stack Layout - Hidden on desktop */
+.portfolio-mobile-stack {
+  display: none;
+}
+
 .project-card {
   background: white;
   border-radius: 16px;
@@ -1751,31 +1756,145 @@ body {
     left: -0.75rem;
   }
 
-  /* Portfolio section mobile */
+  /* Portfolio section mobile - Card Stack Design */
   .portfolio {
     padding: 2rem 1rem;
   }
 
-  .carousel-container {
-    margin: 2rem 0;
+  /* Hide desktop grid on mobile */
+  .projects-grid {
+    display: none;
   }
 
-  .project-card {
-    min-width: 280px;
-    margin: 0 0.5rem;
+  /* Mobile Stack Layout */
+  .portfolio-mobile-stack {
+    display: block;
+    max-width: 100%;
   }
 
-  .project-title {
-    font-size: 1.3rem;
+  .mobile-project-card {
+    background: white;
+    border-radius: 12px;
+    margin-bottom: 20px;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+    overflow: hidden;
+    transition: all 0.3s ease;
+    border-left: 4px solid #255d76;
   }
 
-  .project-description {
+  .mobile-project-card:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.15);
+    border-left-color: #ffc23e;
+  }
+
+  .mobile-card-header {
+    display: flex;
+    align-items: center;
+    padding: 20px;
+    gap: 15px;
+  }
+
+  .mobile-project-thumbnail {
+    width: 60px;
+    height: 60px;
+    background: linear-gradient(135deg, #255d76, #3a7ca8);
+    border-radius: 10px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: white;
+    font-size: 1.5rem;
+    flex-shrink: 0;
+  }
+
+  .mobile-project-info {
+    flex: 1;
+    min-width: 0;
+  }
+
+  .mobile-project-title {
+    font-size: 1.2rem;
+    font-weight: 600;
+    color: #255d76;
+    margin: 0 0 5px 0;
+    line-height: 1.2;
+  }
+
+  .mobile-project-date {
+    font-size: 0.8rem;
+    color: #666;
+    background: rgba(37, 93, 118, 0.1);
+    padding: 3px 8px;
+    border-radius: 8px;
+    display: inline-block;
+    margin-bottom: 8px;
+  }
+
+  .mobile-project-description {
     font-size: 0.9rem;
+    color: #555;
+    line-height: 1.4;
+    margin: 0 0 15px 0;
+    padding: 0 20px;
   }
 
-  .carousel-nav {
-    width: 35px;
-    height: 35px;
+  .mobile-project-tags {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 6px;
+    padding: 0 20px;
+    margin-bottom: 15px;
+  }
+
+  .mobile-project-tags .tag {
+    background: rgba(255, 194, 62, 0.15);
+    color: #d4860c;
+    padding: 4px 8px;
+    border-radius: 8px;
+    font-size: 0.75rem;
+    font-weight: 500;
+  }
+
+  .mobile-project-actions {
+    display: flex;
+    gap: 10px;
+    padding: 0 20px 20px 20px;
+  }
+
+  .mobile-btn {
+    flex: 1;
+    padding: 10px 15px;
+    border-radius: 8px;
+    text-decoration: none;
+    font-size: 0.85rem;
+    font-weight: 600;
+    text-align: center;
+    transition: all 0.3s ease;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 6px;
+  }
+
+  .mobile-btn-primary {
+    background: #255d76;
+    color: white;
+  }
+
+  .mobile-btn-primary:hover {
+    background: #1e4a5f;
+    transform: translateY(-1px);
+  }
+
+  .mobile-btn-secondary {
+    background: rgba(85, 85, 85, 0.1);
+    color: #555;
+    border: 1px solid rgba(85, 85, 85, 0.2);
+  }
+
+  .mobile-btn-secondary:hover {
+    background: rgba(85, 85, 85, 0.2);
   }
 
   .carousel-nav.prev {
