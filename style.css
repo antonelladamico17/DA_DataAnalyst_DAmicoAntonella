@@ -767,12 +767,94 @@ body {
     gap: 15px;
   }
   
+  /* Disable 3D effect on mobile */
   .skill-3d-card {
-    height: 240px;
+    height: auto;
+    min-height: 280px;
+    perspective: none;
   }
   
-  .card-front, .card-back {
-    padding: 12px;
+  .card-inner {
+    transform-style: flat;
+    transition: none;
+  }
+  
+  .skill-3d-card:hover .card-inner {
+    transform: none;
+  }
+  
+  /* Show both front and back content in a single card */
+  .card-front {
+    position: relative;
+    background: linear-gradient(135deg, #ffffff 0%, #f8fafc 100%);
+    border: 2px solid #e2e8f0;
+    padding: 20px;
+    border-radius: 20px;
+    box-shadow: 0 10px 25px rgba(37, 93, 118, 0.15);
+    height: auto;
+    min-height: 260px;
+  }
+  
+  .card-back {
+    display: none; /* Hide the back card on mobile */
+  }
+  
+  .category-icon {
+    width: 60px;
+    height: 60px;
+    font-size: 28px;
+    margin: 0 auto 15px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: white;
+    background: linear-gradient(135deg, #ffc23e 0%, #ffb700 100%);
+    box-shadow: 0 5px 15px rgba(255, 194, 62, 0.3);
+  }
+  
+  /* Add tech tags to front card on mobile */
+  .card-front::after {
+    content: attr(data-tech-list);
+    display: block;
+    margin-top: 15px;
+    padding: 15px;
+    background: linear-gradient(135deg, #255d76 0%, #1e4a5f 100%);
+    color: white;
+    border-radius: 12px;
+    font-size: 0.8rem;
+    line-height: 1.5;
+    text-align: center;
+  }
+  
+  .card-front h3 {
+    font-size: 1.1rem;
+    margin-bottom: 12px;
+    color: #255d76;
+  }
+  
+  .card-description {
+    font-size: 0.85rem;
+    line-height: 1.5;
+    color: #64748b;
+    margin-bottom: 15px;
+  }
+}
+
+/* Extra small mobile devices */
+@media (max-width: 360px) {
+  .skills-3d-grid {
+    grid-template-columns: 1fr;
+    gap: 15px;
+  }
+  
+  .skill-3d-card {
+    min-height: 240px;
+  }
+  
+  .card-front {
+    padding: 15px;
+    min-height: 220px;
   }
   
   .category-icon {
@@ -790,45 +872,9 @@ body {
     font-size: 0.8rem;
   }
   
-  .tech-tags {
-    gap: 6px;
-    margin: 10px 0;
-  }
-  
-  .tech-tag {
-    padding: 4px 8px;
-    font-size: 0.7rem;
-  }
-}
-
-/* Extra small mobile devices */
-@media (max-width: 360px) {
-  .skills-3d-grid {
-    grid-template-columns: 1fr;
-    gap: 12px;
-  }
-  
-  .skill-3d-card {
-    height: 200px;
-  }
-  
-  .card-front, .card-back {
-    padding: 8px;
-  }
-  
-  .category-icon {
-    width: 40px;
-    height: 40px;
-    font-size: 18px;
-    margin-bottom: 8px;
-  }
-  
-  .card-front h3 {
-    font-size: 0.9rem;
-  }
-  
-  .card-description {
-    font-size: 0.7rem;
+  .card-front::after {
+    font-size: 0.75rem;
+    padding: 12px;
   }
 }
 
