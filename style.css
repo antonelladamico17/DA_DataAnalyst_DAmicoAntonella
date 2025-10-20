@@ -735,6 +735,11 @@ body {
   display: none;
 }
 
+/* Hide mobile tech tags on desktop */
+.mobile-tech-tags {
+  display: none;
+}
+
 /* Hover Effects for Cards - updated colors */
 .skill-3d-card {
   transition: transform 0.3s ease;
@@ -770,7 +775,7 @@ body {
   /* Disable 3D effect on mobile */
   .skill-3d-card {
     height: auto;
-    min-height: 280px;
+    min-height: 200px;
     perspective: none;
   }
   
@@ -783,16 +788,20 @@ body {
     transform: none;
   }
   
-  /* Show both front and back content in a single card */
+  /* Simplified mobile layout */
   .card-front {
     position: relative;
     background: linear-gradient(135deg, #ffffff 0%, #f8fafc 100%);
     border: 2px solid #e2e8f0;
-    padding: 20px;
+    padding: 20px 15px;
     border-radius: 20px;
     box-shadow: 0 10px 25px rgba(37, 93, 118, 0.15);
     height: auto;
-    min-height: 260px;
+    min-height: 180px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
   }
   
   .card-back {
@@ -800,9 +809,9 @@ body {
   }
   
   .category-icon {
-    width: 60px;
-    height: 60px;
-    font-size: 28px;
+    width: 50px;
+    height: 50px;
+    font-size: 24px;
     margin: 0 auto 15px;
     border-radius: 50%;
     display: flex;
@@ -811,33 +820,43 @@ body {
     color: white;
     background: linear-gradient(135deg, #ffc23e 0%, #ffb700 100%);
     box-shadow: 0 5px 15px rgba(255, 194, 62, 0.3);
-  }
-  
-  /* Add tech tags to front card on mobile */
-  .card-front::after {
-    content: attr(data-tech-list);
-    display: block;
-    margin-top: 15px;
-    padding: 15px;
-    background: linear-gradient(135deg, #255d76 0%, #1e4a5f 100%);
-    color: white;
-    border-radius: 12px;
-    font-size: 0.8rem;
-    line-height: 1.5;
-    text-align: center;
+    flex-shrink: 0;
   }
   
   .card-front h3 {
-    font-size: 1.1rem;
-    margin-bottom: 12px;
+    font-size: 1rem;
+    margin-bottom: 15px;
     color: #255d76;
+    font-weight: 600;
   }
   
+  /* Hide description on mobile */
   .card-description {
-    font-size: 0.85rem;
-    line-height: 1.5;
-    color: #64748b;
-    margin-bottom: 15px;
+    display: none;
+  }
+  
+  /* Show tech tags directly in the card */
+  .mobile-tech-tags {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 6px;
+    justify-content: center;
+    margin-top: auto;
+  }
+  
+  .mobile-tech-tag {
+    background: linear-gradient(135deg, #255d76 0%, #1e4a5f 100%);
+    color: white;
+    padding: 4px 8px;
+    border-radius: 12px;
+    font-size: 0.7rem;
+    font-weight: 500;
+    white-space: nowrap;
+  }
+  
+  /* Remove the ::after pseudo-element */
+  .card-front::after {
+    display: none;
   }
 }
 
@@ -849,32 +868,29 @@ body {
   }
   
   .skill-3d-card {
-    min-height: 240px;
+    min-height: 160px;
   }
   
   .card-front {
-    padding: 15px;
-    min-height: 220px;
+    padding: 15px 10px;
+    min-height: 140px;
   }
   
   .category-icon {
-    width: 50px;
-    height: 50px;
-    font-size: 24px;
+    width: 45px;
+    height: 45px;
+    font-size: 20px;
     margin-bottom: 12px;
   }
   
   .card-front h3 {
-    font-size: 1rem;
+    font-size: 0.9rem;
+    margin-bottom: 12px;
   }
   
-  .card-description {
-    font-size: 0.8rem;
-  }
-  
-  .card-front::after {
-    font-size: 0.75rem;
-    padding: 12px;
+  .mobile-tech-tag {
+    font-size: 0.65rem;
+    padding: 3px 6px;
   }
 }
 
