@@ -740,6 +740,11 @@ body {
   display: none;
 }
 
+/* Hide mobile skills list on desktop */
+.mobile-skills-list {
+  display: none;
+}
+
 /* Hover Effects for Cards - updated colors */
 .skill-3d-card {
   transition: transform 0.3s ease;
@@ -768,129 +773,112 @@ body {
 /* Responsive Design */
 @media (max-width: 768px) {
   .skills-3d-grid {
-    grid-template-columns: repeat(2, 1fr);
-    gap: 15px;
+    display: none; /* Hide the 3D cards on mobile */
   }
   
-  /* Disable 3D effect on mobile */
-  .skill-3d-card {
-    height: auto;
-    min-height: 200px;
-    perspective: none;
+  /* Mobile Skills List */
+  .mobile-skills-list {
+    display: block;
+    max-width: 100%;
+    margin: 0 auto;
+    padding: 0 20px;
   }
   
-  .card-inner {
-    transform-style: flat;
-    transition: none;
-  }
-  
-  .skill-3d-card:hover .card-inner {
-    transform: none;
-  }
-  
-  /* Simplified mobile layout */
-  .card-front {
-    position: relative;
-    background: linear-gradient(135deg, #ffffff 0%, #f8fafc 100%);
-    border: 2px solid #e2e8f0;
-    padding: 20px 15px;
-    border-radius: 20px;
-    box-shadow: 0 10px 25px rgba(37, 93, 118, 0.15);
-    height: auto;
-    min-height: 180px;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
+  .mobile-skill-category {
+    margin-bottom: 40px;
     text-align: center;
   }
   
-  .card-back {
-    display: none; /* Hide the back card on mobile */
-  }
-  
-  .category-icon {
+  .mobile-skill-icon {
     width: 50px;
     height: 50px;
-    font-size: 24px;
-    margin: 0 auto 15px;
+    background: linear-gradient(135deg, #ffc23e 0%, #ffb700 100%);
     border-radius: 50%;
     display: flex;
     align-items: center;
     justify-content: center;
     color: white;
-    background: linear-gradient(135deg, #ffc23e 0%, #ffb700 100%);
-    box-shadow: 0 5px 15px rgba(255, 194, 62, 0.3);
-    flex-shrink: 0;
+    font-size: 22px;
+    margin: 0 auto 15px auto;
+    box-shadow: 0 4px 15px rgba(255, 194, 62, 0.3);
   }
   
-  .card-front h3 {
-    font-size: 1rem;
-    margin-bottom: 15px;
-    color: #255d76;
+  .mobile-skill-title {
+    font-size: 1.2rem;
     font-weight: 600;
+    color: #255d76;
+    margin: 0 0 10px 0;
+    text-align: center;
+    position: relative;
   }
   
-  /* Hide description on mobile */
-  .card-description {
-    display: none;
+  .mobile-skill-title::after {
+    content: '';
+    display: block;
+    width: 50px;
+    height: 2px;
+    background: #ffc23e;
+    margin: 10px auto 20px auto;
   }
   
-  /* Show tech tags directly in the card */
-  .mobile-tech-tags {
+  .mobile-tech-list {
     display: flex;
     flex-wrap: wrap;
-    gap: 6px;
+    gap: 15px 20px;
     justify-content: center;
-    margin-top: auto;
+    line-height: 1.6;
   }
   
-  .mobile-tech-tag {
-    background: linear-gradient(135deg, #255d76 0%, #1e4a5f 100%);
-    color: white;
-    padding: 4px 8px;
-    border-radius: 12px;
-    font-size: 0.7rem;
+  .mobile-tech-item {
+    background: none;
+    color: #255d76;
+    padding: 0;
+    border-radius: 0;
+    font-size: 0.9rem;
     font-weight: 500;
     white-space: nowrap;
   }
   
-  /* Remove the ::after pseudo-element */
-  .card-front::after {
+  /* Hide the original mobile tech tags inside cards */
+  .mobile-tech-tags {
     display: none;
   }
 }
 
 /* Extra small mobile devices */
 @media (max-width: 360px) {
-  .skills-3d-grid {
-    grid-template-columns: 1fr;
-    gap: 15px;
+  .mobile-skills-list {
+    padding: 0 15px;
   }
   
-  .skill-3d-card {
-    min-height: 160px;
+  .mobile-skill-category {
+    margin-bottom: 35px;
+    text-align: center;
   }
   
-  .card-front {
-    padding: 15px 10px;
-    min-height: 140px;
-  }
-  
-  .category-icon {
+  .mobile-skill-icon {
     width: 45px;
     height: 45px;
     font-size: 20px;
-    margin-bottom: 12px;
+    margin: 0 auto 12px auto;
   }
   
-  .card-front h3 {
-    font-size: 0.9rem;
-    margin-bottom: 12px;
+  .mobile-skill-title {
+    font-size: 1.1rem;
+    margin-bottom: 8px;
   }
   
-  .mobile-tech-tag {
-    font-size: 0.65rem;
-    padding: 3px 6px;
+  .mobile-skill-title::after {
+    width: 40px;
+    margin: 8px auto 15px auto;
+  }
+  
+  .mobile-tech-list {
+    gap: 12px 18px;
+  }
+  
+  .mobile-tech-item {
+    font-size: 0.85rem;
   }
 }
 
