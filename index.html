@@ -31,6 +31,7 @@
       <a href="#about">about</a>
       <a href="#skills">skills</a>
       <a href="#portfolio">portfolio</a>
+      <a href="#contact">contact</a>
       <a href="https://www.linkedin.com/in/antonelladamico" target="_blank" class="btn-contact">
         <i class="fab fa-linkedin"></i>
       </a>
@@ -727,7 +728,36 @@
       </div>
     </div>
 
-    <!-- Mobile Project 3: Road Safety Dashboard -->
+    <!-- Mobile Project 3: Breast Cancer Risk Analysis -->
+    <div class="mobile-project-card">
+      <div class="mobile-card-header">
+        <div class="mobile-project-thumbnail">
+          <i class="fas fa-volume-up"></i>
+        </div>
+        <div class="mobile-project-info">
+          <h3 class="mobile-project-title">Breast Cancer Risk Analysis</h3>
+          <span class="mobile-project-date">Apr 2021</span>
+        </div>
+      </div>
+      <div class="mobile-project-description">
+        Comprehensive statistical analysis of breast cancer risk factors using Mixed Interaction models on blood analysis data to identify significant predictors and correlations.
+      </div>
+      <div class="mobile-project-tags">
+        <span class="tag">R Programming</span>
+        <span class="tag">Statistical Analysis</span>
+        <span class="tag">Mixed Models</span>
+      </div>
+      <div class="mobile-project-actions">
+        <button class="mobile-btn mobile-btn-primary" onclick="openModal('modal-breast-cancer')">
+          <i class="fas fa-book-open"></i> Read More
+        </button>
+        <a href="https://github.com/antonelladamico17/Breast-Cancer-Analysis/blob/main/Report/Breast_Cancer_Report.pdf" target="_blank" class="mobile-btn mobile-btn-secondary">
+          <i class="fas fa-file-pdf"></i> Report
+        </a>
+      </div>
+    </div>
+
+    <!-- Mobile Project 4: Road Safety Dashboard -->
     <div class="mobile-project-card">
       <div class="mobile-card-header">
         <div class="mobile-project-thumbnail">
@@ -851,12 +881,39 @@
   </div>
 </section>
 
-<footer class="footer">
+<footer id="contact" class="footer">
   <div class="container">
     <div class="footer-content">
       <div class="footer-section">
         <h3>Antonella D'Amico</h3>
         <p>Data Analyst specializing in business intelligence, automation, and data-driven solutions.</p>
+        
+        <!-- Contact Form -->
+        <div class="contact-form-container">
+          <h4>Get in Touch</h4>
+          <form 
+            action="https://forms.un-static.com/forms/f56233ff7a514e972795b6b4a59754565275dd9d"
+            method="POST"
+            class="contact-form"
+          >
+            <div class="form-group">
+              <label for="name">Name:</label>
+              <input type="text" id="name" name="name" required placeholder="Your name">
+            </div>
+            <div class="form-group">
+              <label for="email">Email:</label>
+              <input type="email" id="email" name="email" required placeholder="your-email@email.com">
+            </div>
+            <div class="form-group">
+              <label for="message">Message:</label>
+              <textarea id="message" name="message" required placeholder="Write your message here..."></textarea>
+            </div>
+            <button type="submit" class="form-submit-btn">
+              <i class="fas fa-paper-plane"></i> Send
+            </button>
+          </form>
+        </div>
+        
         <div class="footer-social">
           <a href="https://www.linkedin.com/in/antonelladamico" target="_blank" class="social-link">
             <i class="fab fa-linkedin"></i>
@@ -866,9 +923,6 @@
           </a>
           <a href="https://www.instagram.com/antonella.1707" target="_blank" class="social-link">
             <i class="fab fa-instagram"></i>
-          </a>
-          <a href="mailto:d.amico.antonella409@gmail.com" class="social-link">
-            <i class="fas fa-envelope"></i>
           </a>
         </div>
       </div>
@@ -881,6 +935,7 @@
           <li><a href="#skills">Skills</a></li>
           <li><a href="#portfolio">Portfolio</a></li>
           <li><a href="#certifications">Certifications</a></li>
+          <li><a href="#contact">Contact</a></li>
         </ul>
       </div>
       
