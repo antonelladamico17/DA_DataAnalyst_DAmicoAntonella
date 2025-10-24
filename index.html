@@ -974,16 +974,33 @@
     const content = card.querySelector('.card-content');
     const icon = element.querySelector('.card-expand i');
     
-    // Toggle active class
-    card.classList.toggle('active');
+    // Check if this card is currently active
+    const isCurrentlyActive = card.classList.contains('active');
     
-    // Rotate icon
-    if (card.classList.contains('active')) {
-      icon.style.transform = 'rotate(180deg)';
-      content.style.maxHeight = content.scrollHeight + 'px';
-    } else {
+    // Close all other cards first
+    const allCards = document.querySelectorAll('.journey-card');
+    allCards.forEach(otherCard => {
+      if (otherCard !== card && otherCard.classList.contains('active')) {
+        const otherContent = otherCard.querySelector('.card-content');
+        const otherIcon = otherCard.querySelector('.card-expand i');
+        
+        otherCard.classList.remove('active');
+        otherIcon.style.transform = 'rotate(0deg)';
+        otherContent.style.maxHeight = '0';
+      }
+    });
+    
+    // Toggle the clicked card
+    if (isCurrentlyActive) {
+      // If it was active, close it
+      card.classList.remove('active');
       icon.style.transform = 'rotate(0deg)';
       content.style.maxHeight = '0';
+    } else {
+      // If it wasn't active, open it
+      card.classList.add('active');
+      icon.style.transform = 'rotate(180deg)';
+      content.style.maxHeight = content.scrollHeight + 'px';
     }
   }
 
