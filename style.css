@@ -72,18 +72,7 @@ body {
   transform-origin: center;
 }
 
-/* Hamburger animation */
-.hamburger.active span:nth-child(1) {
-  transform: rotate(45deg) translate(9px, 9px);
-}
-
-.hamburger.active span:nth-child(2) {
-  opacity: 0;
-}
-
-.hamburger.active span:nth-child(3) {
-  transform: rotate(-45deg) translate(9px, -9px);
-}
+/* Hamburger stays as 3 lines when active - no X transformation */
 
 
 
