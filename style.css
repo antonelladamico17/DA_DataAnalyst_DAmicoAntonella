@@ -1818,14 +1818,14 @@ body {
   }
 
   .profile-img {
-    width: 200px;
-    height: 200px;
-    border-radius: 50%;
-    object-fit: cover;
-    border: 4px solid #255d76;
-    box-shadow: 0 6px 20px rgba(37, 93, 118, 0.3);
-    z-index: 3;
-    position: relative;
+     width: 200px;
+     height: 200px;
+     border-radius: 50%;
+     object-fit: contain;
+     border: 4px solid #255d76;
+     box-shadow: 0 6px 20px rgba(37, 93, 118, 0.3);
+     z-index: 3;
+     position: relative;
   }
 
   /* Intro text next to photo */
