@@ -1795,9 +1795,6 @@ body {
   }
 
   /* Hide circle background on mobile */
-  .circle-bg {
-    display: none;
-  }
 
   /* Photo container - larger for left positioning */
     .photo-container {
