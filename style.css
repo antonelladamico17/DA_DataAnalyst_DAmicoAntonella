@@ -2141,19 +2141,18 @@ body {
   }
 
   .photo-container {
-    width: 350px;
-    height: 350px;
+    width: 180px;
+    height: 180px;
+    padding: 0;
+    background-color: transparent !important;
+    border: none !important;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 0 auto 0 0;
   }
-
-  .text-left, .text-right {
-    font-size: 3rem !important;
   }
-
-  .circle-bg {
-    width: 400px;
-    height: 400px;
-  }
-}
 
 /* Extra small mobile devices */
 @media screen and (max-width: 480px) {
@@ -2183,13 +2182,17 @@ body {
   }
 
   .profile-img {
-    width: 250px;
-    height: 250px;
+    width: 160px;
+    height: 160px;
+    border-radius: 50%;
+    object-fit: cover;
+    border: 3px solid #fff;
+    box-shadow: 0 4px 16px rgba(37,93,118,0.10);
   }
-
-  .text-left, .text-right {
-    font-size: 1.7rem !important;
-    color: #ffc23e !important;
+  .mobile-intro-text {
+    text-align: right;
+    padding-right: 1.2rem;
+  }
   }
 
   .intro-link span {
@@ -2233,4 +2236,3 @@ body {
   .goal p {
     font-size: 0.9rem;
   }
-}
