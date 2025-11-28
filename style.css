@@ -1761,18 +1761,37 @@ body {
     padding: 1rem;
   }
 
-  /* Hero section mobile - Card Design Alternative */
+  /* Hero section mobile - New Clean Layout */
   .hero {
     padding: 1rem;
     min-height: calc(100vh - 60px);
-    justify-content: space-around;
+    flex-direction: column;
+    justify-content: flex-start;
+    gap: 2rem;
+    padding-top: 2rem;
   }
 
+  /* Hide top row elements on mobile */
+  .top-row {
+    display: none;
+  }
+
+  /* New mobile hero layout */
   .center-text {
     flex-direction: column;
-    gap: 2rem;
-    align-items: center;
-    margin: 2rem 0;
+    gap: 0;
+    align-items: flex-start;
+    margin: 0;
+    width: 100%;
+  }
+
+  /* Photo and intro section */
+  .mobile-hero-top {
+    display: flex;
+    align-items: flex-start;
+    gap: 1.5rem;
+    width: 100%;
+    margin-bottom: 1rem;
   }
 
   /* Hide circle background on mobile */
@@ -1780,57 +1799,120 @@ body {
     display: none;
   }
 
-  /* Create card-style container for mobile */
+  /* Photo container - larger for left positioning */
   .photo-container {
-    order: 2;
-    width: 240px;
-    height: 300px;
-    border-radius: 20px;
-    background-color: #255d76;
-    box-shadow: 0 10px 30px rgba(37, 93, 118, 0.3);
+    order: 0;
+    width: 200px;
+    height: 200px;
+    border-radius: 50%;
+    background: none;
+    box-shadow: none;
     display: flex;
-    flex-direction: column;
     justify-content: center;
     align-items: center;
-    padding: 1.5rem;
+    padding: 0;
     position: relative;
     overflow: visible;
-    border: 3px solid #255d76;
+    border: none;
+    flex-shrink: 0;
   }
 
   .profile-img {
-    width: 150px;
-    height: 150px;
+    width: 200px;
+    height: 200px;
     border-radius: 50%;
     object-fit: cover;
-    border: 3px solid white;
-    box-shadow: 0 5px 15px rgba(0,0,0,0.2);
+    border: 4px solid #255d76;
+    box-shadow: 0 6px 20px rgba(37, 93, 118, 0.3);
     z-index: 3;
     position: relative;
   }
 
-  /* Modern text positioning for mobile */
-  .text-left, .text-right {
-    position: relative !important;
-    font-size: 2rem !important;
-    font-weight: 600 !important;
-    transform: none !important;
-    left: auto !important;
-    right: auto !important;
-    top: auto !important;
-    bottom: auto !important;
-    color: #ffc23e !important;
-    text-shadow: none;
-  }
-
-  .text-left {
+  /* Intro text next to photo */
+  .mobile-intro-text {
     order: 1;
-    margin-bottom: -1rem;
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    padding-top: 1rem;
   }
 
-  .text-right {
-    order: 3;
-    margin-top: -1rem;
+  .mobile-intro-text h1 {
+    font-size: 1.6rem;
+    font-weight: 600;
+    color: #255d76;
+    margin: 0 0 0.3rem 0;
+    line-height: 1.2;
+  }
+
+  /* Data Analyst title inside intro text */
+  .mobile-intro-text .mobile-job-title {
+    font-size: 1.8rem;
+    font-weight: 800;
+    color: #ffc23e;
+    margin: 0 0 0.5rem 0;
+    letter-spacing: 0.5px;
+    text-transform: uppercase;
+    line-height: 1.1;
+  }
+
+  .mobile-intro-text .subtitle {
+    font-size: 0.95rem;
+    color: #666;
+    margin: 0;
+    line-height: 1.4;
+  }
+
+  /* Hide separate mobile title */
+  .mobile-title {
+    display: none !important;
+  }
+
+  /* Hide original text elements on mobile */
+  .text-left, .text-right {
+    display: none !important;
+  }
+
+  /* Goal section - enhanced styling */
+  .bottom-row {
+    width: 100%;
+    margin-top: 1rem;
+  }
+
+  .goal {
+    background: white;
+    border-radius: 15px;
+    padding: 1.5rem;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.08);
+    border-left: 4px solid #ffc23e;
+  }
+
+  .goal h3 {
+    color: #255d76;
+    font-size: 1.2rem;
+    margin-bottom: 0.8rem;
+    font-weight: 600;
+  }
+
+  .goal p {
+    color: #555;
+    line-height: 1.6;
+    margin: 0;
+    font-size: 0.95rem;
+  }
+
+  /* Show mobile elements and hide desktop elements */
+  .mobile-hero-top {
+    display: flex !important;
+  }
+
+  .mobile-title {
+    display: block !important;
+  }
+
+  .center-text {
+    display: none !important;
   }
 
   /* About section mobile */
