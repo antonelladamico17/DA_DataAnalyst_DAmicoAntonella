@@ -1,7 +1,3 @@
-  /* Riduci spazio tra immagine e testo su mobile piccolo */
-  .mobile-intro-text {
-    padding-top: 0.2rem !important;
-  }
 /* Reset and base styles */
 * {
   margin: 0;
@@ -102,32 +98,44 @@ body {
 
 .side-left {
   width: fit-content;
+  max-width: 520px;
+}
+
+.intro-chip {
+  display: inline-block;
+  padding: 0.4rem 0.9rem;
+  border-radius: 999px;
+  background: rgba(37, 93, 118, 0.08);
+  color: #255d76;
+  font-size: 0.9rem;
+  font-weight: 600;
+  letter-spacing: 0.03em;
+  text-transform: uppercase;
+  margin-bottom: 0.9rem;
+}
+
+.hero-headline {
+  font-size: clamp(1.9rem, 3vw, 2.8rem);
+  line-height: 1.15;
+  color: #0f2f3e;
+  margin-bottom: 0.9rem;
 }
 
 .intro-link {
   text-decoration: none;
-  color: #000;
-  display: inline-block;
+  color: #255d76;
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
   cursor: pointer;
-  margin-bottom: 1rem;
+  margin-bottom: 0.2rem;
+  font-size: 1rem;
+  font-weight: 600;
+  transition: transform 0.25s ease;
 }
 
-.intro-link span {
-  font-size: 1.2rem;
-  font-weight: 400;
-  font-family: 'Poppins', sans-serif;
-}
-
-.underline {
-  width: 60%;
-  height: 4px;
-  background-color: #255d76;
-  margin-top: 5px;
-  transition: width 0.3s ease;
-}
-
-.intro-link:hover .underline {
-  width: 100%;
+.intro-link:hover {
+  transform: translateX(5px);
 }
 
 /* Center content: text + image */
@@ -210,18 +218,22 @@ body {
 .goal {
   text-align: right;
   width: fit-content;
-  max-width: 300px;
+  max-width: 360px;
   align-self: flex-end;
+  padding: 1rem 1.2rem;
+  border-radius: 14px;
+  background: linear-gradient(135deg, rgba(37, 93, 118, 0.05), rgba(255, 194, 62, 0.12));
 }
 
 .goal h3 {
-  color: gray;
-  margin: 1rem 0 0.5rem;
+  color: #255d76;
+  margin: 0 0 0.5rem;
   font-weight: 600;
 }
 
 .goal p {
   line-height: 1.6;
+  color: #1f2937;
 }
 
 /* PROFILE */
@@ -1765,14 +1777,13 @@ body {
     padding: 1rem;
   }
 
-  /* Hero section mobile - New Clean Layout */
+  /* Hero section mobile - New intro layout */
   .hero {
-    padding: 1rem;
+    padding: 1.2rem 1rem 2rem;
     min-height: calc(100vh - 60px);
     flex-direction: column;
     justify-content: flex-start;
-    gap: 2rem;
-    padding-top: 2rem;
+    gap: 1.2rem;
   }
 
   /* Hide top row elements on mobile */
@@ -1780,95 +1791,83 @@ body {
     display: none;
   }
 
-  /* New mobile hero layout */
-  .center-text {
-    flex-direction: column;
-    gap: 0;
-    align-items: flex-start;
-    margin: 0;
-    width: 100%;
-  }
-
   /* Photo and intro section */
   .mobile-hero-top {
     display: flex;
-    align-items: flex-start;
-    gap: 1.5rem;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    gap: 1rem;
     width: 100%;
-    margin-bottom: 1rem;
+    margin-bottom: 0.3rem;
+    padding: 1rem;
+    border-radius: 20px;
+    background: linear-gradient(145deg, #f8fbfd 0%, #eef6f9 100%);
+    box-shadow: 0 6px 22px rgba(37, 93, 118, 0.08);
   }
 
-  /* Hide circle background on mobile */
-
-  /* Photo container - larger for left positioning */
-    .photo-container {
-      order: 0;
-      width: 200px;
-      height: 200px;
-      background: none;
-      background-color: transparent !important;
-      box-shadow: none;
-      display: flex;
-      justify-content: center;
-      align-items: center;
-      padding: 0;
-      position: relative;
-      overflow: visible;
-      border: none;
-      flex-shrink: 0;
-    }
+  .photo-container {
+    order: 0;
+    width: 180px;
+    height: 180px;
+    background: linear-gradient(160deg, #255d76 0%, #2f7a9d 100%);
+    box-shadow: 0 8px 24px rgba(37, 93, 118, 0.25);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 0;
+    position: relative;
+    overflow: hidden;
+    border: 4px solid #ffffff;
+    flex-shrink: 0;
+  }
 
   .profile-img {
-     width: 200px;
-     height: 200px;
-     object-fit: contain;
-     box-shadow: none;
-     z-index: 3;
-     position: relative;
+    width: 92%;
+    height: 92%;
+    object-fit: cover;
+    border-radius: 50%;
+    box-shadow: none;
+    z-index: 3;
+    position: relative;
   }
 
-  /* Intro text next to photo */
   .mobile-intro-text {
     order: 1;
-    flex: 1;
     display: flex;
     flex-direction: column;
     justify-content: center;
-    padding-top: 1rem;
+    align-items: center;
+    padding-top: 0;
+    max-width: 320px;
   }
 
   .mobile-intro-text h1 {
-    font-size: 1.6rem;
-    font-weight: 600;
+    font-size: 1.7rem;
+    font-weight: 700;
     color: #255d76;
-    margin: 0 0 0.3rem 0;
+    margin: 0;
     line-height: 1.2;
   }
 
-  /* Data Analyst title inside intro text */
   .mobile-intro-text .mobile-job-title {
-    font-size: 1.8rem;
+    font-size: 1.15rem;
     font-weight: 800;
-    color: #ffc23e;
-    margin: 0 0 0.5rem 0;
-    letter-spacing: 0.5px;
+    color: #d88f16;
+    margin: 0.35rem 0 0.55rem;
+    letter-spacing: 0.12em;
     text-transform: uppercase;
     line-height: 1.1;
   }
 
   .mobile-intro-text .subtitle {
-    font-size: 0.95rem;
-    color: #666;
+    font-size: 0.96rem;
+    color: #4b5563;
     margin: 0;
-    line-height: 1.4;
+    line-height: 1.5;
   }
 
-  /* Hide separate mobile title */
-  .mobile-title {
-    display: none !important;
-  }
-
-  /* Hide original text elements on mobile */
+  /* Hide desktop hero title composition on mobile */
   .text-left, .text-right {
     display: none !important;
   }
@@ -1876,38 +1875,37 @@ body {
   /* Goal section - enhanced styling */
   .bottom-row {
     width: 100%;
-    margin-top: 1rem;
+    margin-top: 0.25rem;
+    padding: 0;
+    justify-content: center;
   }
 
   .goal {
     background: white;
-    border-radius: 15px;
-    padding: 1.5rem;
+    border-radius: 16px;
+    padding: 1.1rem 1rem;
     box-shadow: 0 4px 20px rgba(0, 0, 0, 0.08);
     border-left: 4px solid #ffc23e;
+    max-width: 100%;
+    text-align: left;
   }
 
   .goal h3 {
     color: #255d76;
-    font-size: 1.2rem;
-    margin-bottom: 0.8rem;
+    font-size: 1.05rem;
+    margin-bottom: 0.45rem;
     font-weight: 600;
   }
 
   .goal p {
     color: #555;
-    line-height: 1.6;
+    line-height: 1.5;
     margin: 0;
-    font-size: 0.95rem;
+    font-size: 0.92rem;
   }
 
-  /* Show mobile elements and hide desktop elements */
   .mobile-hero-top {
     display: flex !important;
-  }
-
-  .mobile-title {
-    display: block !important;
   }
 
   .center-text {
@@ -2122,15 +2120,9 @@ body {
     font-size: 0.9rem;
   }
 
-  /* Bottom section mobile */
   .bottom-row {
     justify-content: center;
-    padding: 0 1rem;
-  }
-
-  .goal {
-    text-align: center;
-    max-width: 100%;
+    padding: 0;
   }
 }
 
@@ -2165,38 +2157,28 @@ body {
   }
 
   .hero {
-    padding: 0.5rem;
+    padding: 1rem 0.75rem 1.5rem;
   }
 
-  .center-text {
-    gap: 1.5rem;
+  .mobile-hero-top {
+    padding: 0.85rem;
   }
 
-  /* Compact card for very small screens */
   .photo-container {
-    width: 220px;
-    height: 260px;
-    padding: 1rem;
-    background-color: transparent !important;
-    border: none !important;
+    width: 148px;
+    height: 148px;
   }
 
-  .profile-img {
-    width: 160px;
-    height: 160px;
-    border-radius: 50%;
-    object-fit: cover;
-    border: 3px solid #fff;
-    box-shadow: 0 4px 16px rgba(37,93,118,0.10);
-  }
-  .mobile-intro-text {
-    text-align: right;
-    padding-right: 5rem;
-  }
+  .mobile-intro-text h1 {
+    font-size: 1.45rem;
   }
 
-  .intro-link span {
-    font-size: 1rem;
+  .mobile-intro-text .subtitle {
+    font-size: 0.9rem;
+  }
+
+  .intro-link {
+    font-size: 0.92rem;
   }
 
   .about {
@@ -2224,13 +2206,8 @@ body {
     padding: 6px 10px;
   }
 
-  /* Bottom section extra small mobile */
-  .goal {
-    padding: 0 0.5rem;
-  }
-
   .goal h3 {
-    font-size: 1.1rem;
+    font-size: 1rem;
   }
 
   .goal p {
