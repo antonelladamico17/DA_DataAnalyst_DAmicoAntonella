@@ -149,6 +149,10 @@ body {
   width: 100%;
 }
 
+.mobile-hero-top {
+  display: none;
+}
+
 .text-left,
 .text-right {
   position: absolute;
