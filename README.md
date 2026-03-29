@@ -18,21 +18,5 @@ I transform complex data into clear, actionable insights to support strategic bu
 ## Goal
 Build data-driven solutions that improve business strategies, optimize resources, and generate concrete value.
 
-## Tech Stack
-- HTML5
-- CSS3
-- Font Awesome
-- Google Fonts
-
-## Repository Structure
-- index.html - Page structure and content
-- style.css - Styling and responsive behavior
-- image/ - Images and logos
-
-## Run Locally
-1. Clone or download the repository
-2. Open the project folder
-3. Open index.html in your browser
-
 ## Contact
 - LinkedIn: https://www.linkedin.com/in/antonelladamico
